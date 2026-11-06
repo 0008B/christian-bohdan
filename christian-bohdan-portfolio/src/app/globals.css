@@ -1,0 +1,293 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  /* Christian Bohdan — site-specific tokens */
+  --color-brand: var(--brand);
+  --color-on-brand: var(--on-brand);
+  --color-link: var(--link);
+  --color-header: var(--header);
+  --color-panel: var(--panel);
+  --color-footer: var(--footer);
+  --color-chip: var(--chip);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  /* Christian Bohdan — light theme (default: best readability) */
+  --radius: 0.625rem;
+  color-scheme: light;
+
+  --background: #f4f7fc;
+  --foreground: #0c1b33;
+  --card: #ffffff;
+  --card-foreground: #0c1b33;
+  --popover: #ffffff;
+  --popover-foreground: #0c1b33;
+  --primary: #0064c8;
+  --primary-foreground: #ffffff;
+  --secondary: #e8eef7;
+  --secondary-foreground: #14294d;
+  --muted: #e9eef6;
+  --muted-foreground: #4e5d76;
+  --accent: rgba(0, 100, 200, 0.08);
+  --accent-foreground: #0057b0;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #d9e2f0;
+  --input: #d9e2f0;
+  --ring: #0064c8;
+
+  /* site-specific tokens */
+  --brand: #0064c4;
+  --on-brand: #ffffff;
+  --link: #0064c4;
+  --header: #ffffff;
+  --panel: #ffffff;
+  --footer: #eef2f9;
+  --chip: #eef2f9;
+  --hero-fade: #ffffff;
+  --grid-line: rgba(12, 27, 51, 0.07);
+  --grad-from: #0050a4;
+  --grad-to: #0090ff;
+  --glow-ring: rgba(0, 100, 196, 0.28);
+  --glow-soft: rgba(0, 100, 196, 0.12);
+  --scroll-track: #eef2f9;
+  --scroll-thumb: #c5d1e6;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0c1b33;
+  --sidebar-primary: #0064c8;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: rgba(0, 100, 200, 0.08);
+  --sidebar-accent-foreground: #0057b0;
+  --sidebar-border: #d9e2f0;
+  --sidebar-ring: #0064c8;
+  --chart-1: #0064c8;
+  --chart-2: #0090ff;
+  --chart-3: #4e5d76;
+  --chart-4: #0050a4;
+  --chart-5: #8fb8e8;
+}
+
+.dark {
+  /* Christian Bohdan — dark navy pentest theme */
+  color-scheme: dark;
+
+  --background: #000723;
+  --foreground: #e9f0ff;
+  --card: #04123a;
+  --card-foreground: #e9f0ff;
+  --popover: #04123a;
+  --popover-foreground: #e9f0ff;
+  --primary: #0090ff;
+  --primary-foreground: #001030;
+  --secondary: #0a1c4a;
+  --secondary-foreground: #cde3ff;
+  --muted: #0a1c4a;
+  --muted-foreground: #8592b0;
+  --accent: rgba(0, 144, 255, 0.14);
+  --accent-foreground: #6dbbff;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: rgba(109, 187, 255, 0.16);
+  --input: rgba(109, 187, 255, 0.16);
+  --ring: #0090ff;
+
+  /* site-specific tokens */
+  --brand: #0090ff;
+  --on-brand: #001030;
+  --link: #6dbbff;
+  --header: #000723;
+  --panel: #04123a;
+  --footer: #020a28;
+  --chip: #030d2c;
+  --hero-fade: #000723;
+  --grid-line: rgba(109, 187, 255, 0.05);
+  --grad-from: #6dbbff;
+  --grad-to: #0090ff;
+  --glow-ring: rgba(0, 144, 255, 0.25);
+  --glow-soft: rgba(0, 144, 255, 0.18);
+  --scroll-track: #000723;
+  --scroll-thumb: #0a1c4a;
+
+  --sidebar: #04123a;
+  --sidebar-foreground: #e9f0ff;
+  --sidebar-primary: #0090ff;
+  --sidebar-primary-foreground: #001030;
+  --sidebar-accent: rgba(0, 144, 255, 0.14);
+  --sidebar-accent-foreground: #6dbbff;
+  --sidebar-border: rgba(109, 187, 255, 0.16);
+  --sidebar-ring: #0090ff;
+  --chart-1: #0090ff;
+  --chart-2: #6dbbff;
+  --chart-3: #8592b0;
+  --chart-4: #0057b8;
+  --chart-5: #cde3ff;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  ::selection {
+    background: rgba(0, 100, 200, 0.2);
+  }
+  .dark ::selection {
+    background: rgba(0, 144, 255, 0.35);
+    color: #e9f0ff;
+  }
+}
+
+/* Faint blueprint grid over the page background (theme-aware) */
+.bg-grid {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 40%, transparent 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(92deg, var(--grad-from) 0%, var(--grad-to) 55%, var(--grad-from) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow-card {
+  box-shadow:
+    0 0 0 1px var(--glow-ring),
+    0 0 42px var(--glow-soft);
+}
+
+/* Bottom fade for the hero photo caption (blends into the theme surface) */
+.photo-fade {
+  background: linear-gradient(to top, color-mix(in srgb, var(--hero-fade) 96%, transparent), transparent);
+}
+
+/* Blinking cursor for the terminal hero */
+@keyframes cb-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.cb-cursor {
+  animation: cb-blink 1s step-end infinite;
+}
+
+/* Custom scrollbars (webkit), theme-aware */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border-radius: 8px;
+  border: 2px solid var(--scroll-track);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .cb-cursor {
+    animation: none;
+  }
+}
+
+/* Printing: always print the light palette (regardless of the selected theme),
+   and reveal all animated content (recruiters may print the page) */
+@media print {
+  *,
+  *::before,
+  *::after {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  header {
+    position: static !important;
+  }
+  html,
+  html.dark {
+    color-scheme: light;
+    --background: #ffffff;
+    --foreground: #0c1b33;
+    --card: #ffffff;
+    --card-foreground: #0c1b33;
+    --popover: #ffffff;
+    --popover-foreground: #0c1b33;
+    --primary: #0064c8;
+    --primary-foreground: #ffffff;
+    --secondary: #e8eef7;
+    --secondary-foreground: #14294d;
+    --muted: #e9eef6;
+    --muted-foreground: #4e5d76;
+    --accent: rgba(0, 100, 200, 0.08);
+    --accent-foreground: #0057b0;
+    --border: #d9e2f0;
+    --input: #d9e2f0;
+    --ring: #0064c8;
+    --brand: #0064c4;
+    --on-brand: #ffffff;
+    --link: #0064c4;
+    --header: #ffffff;
+    --panel: #ffffff;
+    --footer: #eef2f9;
+    --chip: #eef2f9;
+    --hero-fade: #ffffff;
+    --grid-line: transparent;
+  }
+  body {
+    background: #fff !important;
+  }
+}
